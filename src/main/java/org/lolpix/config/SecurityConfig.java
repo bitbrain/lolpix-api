@@ -1,5 +1,6 @@
-package org.lolpix;
+package org.lolpix.config;
 
+import org.lolpix.AuthProvider;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
@@ -8,11 +9,12 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 
 /**
- * Created by lerk on 15.06.16.
+ * @author Lukas F&uuml;lling
  */
 @Configuration
 @EnableWebSecurity
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
+
     @Autowired
     AuthProvider authProvider;
 
@@ -21,6 +23,11 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         auth.authenticationProvider(authProvider);
     }
 
+    /**
+     * Sets the access rights for specific paths.
+     * @param http the HTTPSecurity object.
+     * @throws Exception when there's an error.
+     */
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http

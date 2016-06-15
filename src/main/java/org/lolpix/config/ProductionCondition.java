@@ -1,11 +1,12 @@
-package org.lolpix;
+package org.lolpix.config;
 
 import org.springframework.context.annotation.Condition;
 import org.springframework.context.annotation.ConditionContext;
 import org.springframework.core.type.AnnotatedTypeMetadata;
 
 /**
- * Created by lerk on 15.06.16.
+ * Checks if we're running in production mode.
+ * @author Lukas F&uuml;lling
  */
 public class ProductionCondition implements Condition {
     @Override

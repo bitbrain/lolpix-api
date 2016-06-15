@@ -1,11 +1,11 @@
-package org.lolpix;
+package org.lolpix.repositories;
 
 import org.lolpix.entities.User;
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.stereotype.Repository;
 
 /**
- * Created by lerk on 15.06.16.
+ * @author Lukas F&uuml;lling
  */
 @Repository
 interface UserRepo extends MongoRepository<User, String> {

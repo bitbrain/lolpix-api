@@ -7,7 +7,7 @@ import org.springframework.security.core.AuthenticationException;
 import org.springframework.stereotype.Component;
 
 /**
- * Created by lerk on 15.06.16.
+ * @author Lukas F&uuml;lling
  */
 @Component
 public class AuthProvider implements AuthenticationProvider {
