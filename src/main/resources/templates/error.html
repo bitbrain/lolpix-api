@@ -1,0 +1,32 @@
+<html xmlns:th="https://thymeleaf.org">
+<head>
+    <title>Error</title>
+    <style>
+        dl.inline dd {
+            display: inline;
+            margin: 0;
+        }
+        dl.inline dd:after{
+            display: block;
+            content: '';
+        }
+        dl.inline dt{
+            display: inline-block;
+            min-width: 100px;
+        }
+    </style>
+</head>
+<body>
+<h1>Error!</h1>
+<p>There was an error. Sorry for that. In the most cases this indicates that an image could not be found. Check your
+    URL, try again or go <a href="/" th:href="@{/}">home</a>.</p>
+<dl class="inline">
+    <dt><strong>Key</strong></dt>
+    <dd><strong>Value</strong></dd>
+    <div th:each="errorAttr : ${error_attrs}">
+        <dt class="col-sm-6" th:text="${errorAttr.key}"></dt>
+        <dd class="col-sm-6" th:text="${errorAttr.value}"></dd>
+    </div>
+</dl>
+</body>
+</html>
